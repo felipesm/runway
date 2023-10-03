@@ -2,6 +2,7 @@ package com.ifdeveloper.runway;
 
 import com.ifdeveloper.runway.models.File;
 import com.ifdeveloper.runway.repository.FileRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,11 @@ public class FileDBTest {
 
     @Autowired
     private FileRepository fileRepository;
+
+    @AfterEach
+    public void cleanUp() {
+        fileRepository.deleteAll();
+    }
 
     @Test
     public void testDataSource() {
