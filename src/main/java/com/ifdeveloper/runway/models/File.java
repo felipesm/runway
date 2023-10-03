@@ -3,6 +3,7 @@ package com.ifdeveloper.runway.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class File {
@@ -10,6 +11,7 @@ public class File {
     @Id
     private String id;
 
+    @NotBlank(message = "The field name cannot be null")
     private String name;
 
     private Long size;
