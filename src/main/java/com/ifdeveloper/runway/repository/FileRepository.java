@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface FileRepository extends JpaRepository<File, String> {
 
+    File findFirstByOrderByIdDesc();
+
     File findByNameIgnoreCase(String name);
 
     List<File> findAllByOrderByNameAsc();
